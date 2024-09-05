@@ -155,6 +155,14 @@ To address this problem, we will create a simple image processing model using Py
 
 Here's the Python code to perform face detection and edge detection:
 
+### Code Implementation
+
+Below are the steps and corresponding code to perform face detection and edge detection:
+
+#### **Step 1: Load Pre-trained Haar Cascade Classifier**
+
+First, load the Haar Cascade Classifier for face detection:
+
 ```python
 import cv2
 import numpy as np
@@ -162,7 +170,13 @@ from google.colab.patches import cv2_imshow  # Import cv2_imshow for displaying 
 
 # Load pre-trained Haar Cascade Classifier for face detection
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
+```
 
+#### **Step 2: Load and Verify the Image**
+
+Next, load the image and verify that it is loaded correctly:
+
+```python
 # Load the image
 image_path = '/content/face.jpg'  # Replace with your image path
 image = cv2.imread(image_path)
@@ -171,12 +185,35 @@ image = cv2.imread(image_path)
 if image is None:
     print(f"Error: Image at path '{image_path}' could not be loaded.")
     exit()
+```
+
+#### **Step 3: Convert the Image to Grayscale**
+
+Convert the loaded image to grayscale to simplify processing:
+
+```python
 
 # Convert the image to grayscale
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
+```
+
+#### **Step 4: Apply Edge Detection**
+
+Apply the Canny edge detection algorithm to highlight boundaries:
+
+```python
+
 # Apply edge detection using Canny
 edges = cv2.Canny(gray, 100, 200)
+
+```
+
+#### **Step 5: Detect Faces in the Image**
+
+Detect faces using the Haar Cascade Classifier and draw rectangles around them:
+
+```python
 
 # Detect faces in the image
 faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, minSize=(30, 30))
@@ -185,8 +222,16 @@ faces = face_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=5, min
 for (x, y, w, h) in faces:
     cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
+```
+
+#### **Step 6: Display the Results**
+
+Finally, display the image with detected faces and the edge-detected image:
+
+```python
 # Display the result using cv2_imshow
 cv2_imshow(image)  # Show image with detected faces
 cv2_imshow(edges)  # Show edge-detected image
+```
 
-# No need for cv2.waitKey() and cv2.destroyAllWindows() in Colab
+
