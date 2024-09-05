@@ -14,6 +14,8 @@ At its core, **Computer Vision** helps AI systems to:
 
 **Image Processing** refers to the manipulation and enhancement of images to prepare them for further analysis by AI systems. Raw visual data often needs preprocessing or transformation to be more accessible for AI models.
 
+![image-processing](https://github.com/user-attachments/assets/da4bbc4c-0482-463a-ac34-6fc0bdda7529)
+
 **Why it’s crucial:**
 - **Enhancement**: Improves image quality by reducing noise and increasing contrast.
 - **Manipulation**: Alters images to adjust size, orientation, or color spectrum.
