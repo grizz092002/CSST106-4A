@@ -1,6 +1,6 @@
 # Exploring the Role of Computer Vision and Image Processing in AI
 
-https://github.com/user-attachments/assets/1c4bb662-8290-45bd-877e-2abe5447caca
+https://github.com/user-attachments/assets/e3ca6488-9f6b-4afc-a124-88411aaa6bdb
 
 ## Introduction to Computer Vision
 
