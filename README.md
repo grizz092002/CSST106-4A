@@ -91,6 +91,8 @@ Segmentation divides an image into multiple segments or regions based on criteri
 
 Facial recognition is a widely used AI application that leverages **computer vision** to identify or verify a person's identity by analyzing their facial features. This technology is used in various sectors including security, authentication, and surveillance.
 
+![face-recog](https://github.com/user-attachments/assets/fde001fa-5678-4f45-9a0d-48b007b63b51)
+
 Facial recognition systems use **image processing** and **machine learning** algorithms to analyze, compare, and match facial images against a database of stored profiles.
 
 ---
@@ -98,6 +100,8 @@ Facial recognition systems use **image processing** and **machine learning** alg
 ## Role of Image Processing in Facial Recognition Systems
 
 **Image processing** plays a crucial role in the functioning of facial recognition systems. These systems rely on several key techniques to enhance and analyze facial images to ensure accurate identification.
+
+
 
 ### Key Image Processing Techniques:
 1. **Face Detection**: Locates and isolates the face from an image or video frame. This step uses techniques such as the **Haar Cascade Classifier** or **Deep Learning-based models** like MTCNN (Multi-task Cascaded Convolutional Networks).
