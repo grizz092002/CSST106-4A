@@ -245,5 +245,5 @@ Example Output:
 
 ![face-gray](https://github.com/user-attachments/assets/4be2435e-3ee2-4c8b-86fd-8b91b5a87a94)
 
-
+This implementation demonstrates a basic approach to face detection using image processing techniques. By applying edge detection and Haar Cascade Classifier, the model effectively identifies and highlights faces in an image, showcasing the practical application of computer vision in facial recognition systems.
 
