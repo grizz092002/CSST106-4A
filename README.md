@@ -227,6 +227,9 @@ for (x, y, w, h) in faces:
     cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
 ```
+Exampl Result:
+
+![face-rectangle](https://github.com/user-attachments/assets/7c1249c5-d006-4607-8fd6-d732d4ab925a)
 
 #### **Step 6: Display the Results**
 
