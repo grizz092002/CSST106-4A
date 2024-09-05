@@ -101,7 +101,7 @@ Facial recognition systems use **image processing** and **machine learning** alg
 
 **Image processing** plays a crucial role in the functioning of facial recognition systems. These systems rely on several key techniques to enhance and analyze facial images to ensure accurate identification.
 
-
+<img width="1212" alt="face-recognition-process" src="https://github.com/user-attachments/assets/f0ac88c7-7fae-4ac5-a6ae-a49ec9ee6747">
 
 ### Key Image Processing Techniques:
 1. **Face Detection**: Locates and isolates the face from an image or video frame. This step uses techniques such as the **Haar Cascade Classifier** or **Deep Learning-based models** like MTCNN (Multi-task Cascaded Convolutional Networks).
