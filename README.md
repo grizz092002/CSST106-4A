@@ -182,7 +182,7 @@ Next, load the image and verify that it is loaded correctly:
 
 ```python
 # Load the image
-image_path = '/content/face.jpg'  # Replace with your image path
+image_path = 'path/to/your/image.jpg'  # Replace with your image path
 image = cv2.imread(image_path)
 
 # Check if the image is loaded correctly
@@ -227,7 +227,7 @@ for (x, y, w, h) in faces:
     cv2.rectangle(image, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
 ```
-Exampl Result:
+Example Output:
 
 ![face-rectangle](https://github.com/user-attachments/assets/7c1249c5-d006-4607-8fd6-d732d4ab925a)
 
@@ -240,5 +240,10 @@ Finally, display the image with detected faces and the edge-detected image:
 cv2_imshow(image)  # Show image with detected faces
 cv2_imshow(edges)  # Show edge-detected image
 ```
+
+Example Output:
+
+![face-gray](https://github.com/user-attachments/assets/4be2435e-3ee2-4c8b-86fd-8b91b5a87a94)
+
 
 
