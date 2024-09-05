@@ -1,5 +1,7 @@
 # Exploring the Role of Computer Vision and Image Processing in AI
 
+https://github.com/user-attachments/assets/1c4bb662-8290-45bd-877e-2abe5447caca
+
 ## Introduction to Computer Vision
 
 **Computer Vision** is a branch of Artificial Intelligence (AI) that enables machines to interpret and understand visual information from the world around them. It simulates human vision, allowing computers to perceive, process, and respond to visual stimuli.
