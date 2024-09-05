@@ -29,7 +29,7 @@ Image processing lays the groundwork for Computer Vision, enabling AI systems to
 
 Below are key image processing techniques used in AI to enhance and analyze images, contributing to computer vision tasks:
 
-
+![image-processing-techniques](https://github.com/user-attachments/assets/bb051ffa-3eaa-41b2-8656-9debe241abdd)
 
 ### A. Image Acquisition
 
