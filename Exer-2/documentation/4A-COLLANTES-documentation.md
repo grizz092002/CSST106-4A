@@ -51,7 +51,7 @@ plt.title('SIFT Keypoints')
 plt.show()
 ```
 
-##SURF Feature Extraction
+## SURF Feature Extraction
 This section shows how to perform feature extraction using the SURF algorithm.
 
 ```python
@@ -77,7 +77,7 @@ plt.title('SURF Keypoints')
 plt.show()
 ```
 
-##ORB Feature Extraction
+## ORB Feature Extraction
 The ORB feature extraction method is illustrated below.
 
 ```python
@@ -103,7 +103,7 @@ plt.title('ORB Keypoints')
 plt.show()
 ```
 
-##Feature Matching
+## Feature Matching
 This section describes how to match features between two images using the SIFT algorithm.
 
 ```python
@@ -132,7 +132,7 @@ plt.title('Feature Matching with SIFT')
 plt.show()
 ```
 
-##Real-World Applications (Image Stitching using Homography)
+## Real-World Applications (Image Stitching using Homography)
 This example illustrates image stitching by aligning two images using homography based on feature matching.
 
 ```python
@@ -177,7 +177,7 @@ plt.title('Image Alignment using Homography')
 plt.show()
 ```
 
-##Combining SIFT and ORB
+## Combining SIFT and ORB
 This section demonstrates how to combine features extracted using SIFT and ORB and match them accordingly.
 
 ```python
@@ -243,12 +243,12 @@ plt.show()
 
 In conclusion, feature extraction and object detection play crucial roles in the field of computer vision, enabling us to analyze and interpret images more effectively. Throughout this presentation, we've explored three powerful feature extraction methods: **SIFT**, **SURF**, and **ORB**. Each method has its unique strengths and applications, making them suitable for different tasks in image processing.
 
-### Key Takeaways:
+## Key Takeaways:
 - **SIFT** and **SURF** are robust against scale and rotation, making them ideal for identifying features in varied conditions.
 - **ORB** offers a fast alternative with efficient computation, particularly useful in real-time applications.
 - Combining different feature extraction methods can enhance performance, allowing us to leverage the strengths of each approach.
 
-### Future Directions:
+## Future Directions:
 As we move forward in the realm of computer vision, we can explore:
 - Integrating deep learning techniques with traditional methods for enhanced accuracy.
 - Developing real-time object detection systems for various applications such as autonomous vehicles, surveillance, and augmented reality.
