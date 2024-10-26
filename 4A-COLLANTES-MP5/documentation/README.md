@@ -37,4 +37,4 @@ Download the YOLOv3 configuration and weights files:
 !wget https://pjreddie.com/media/files/yolov3.weights
 ```
 ## Code Overview
-   ##1.Model loading
+   ## 1. Model loading
