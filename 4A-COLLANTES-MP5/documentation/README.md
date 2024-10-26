@@ -187,15 +187,9 @@ Download the YOLOv3 configuration and weights files:
      plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
      plt.show()
    ```
-   ### Process Images
-   
-   Image 1
+   ## Process Images
    ![4A-COLLANTES-MP5-Process_Image1](https://github.com/user-attachments/assets/9d235337-bbf9-4acd-98b7-29e1c5f81dca)
-
-   Image 2
    ![4A-COLLANTES-MP5-Process_Image2](https://github.com/user-attachments/assets/eb665194-1626-412b-9ecc-6d00b6af668d)
-
-   Image3
    ![4A-COLLANTES-MP5-Process_Image3](https://github.com/user-attachments/assets/5beb46dc-f9d2-4824-b76d-15f33145b01c)
    
    - Test the model on multiple images to evaluate performance across various inputs.
