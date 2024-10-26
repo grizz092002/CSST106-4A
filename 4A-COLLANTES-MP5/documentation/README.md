@@ -128,6 +128,7 @@ Download the YOLOv3 configuration and weights files:
    plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
    plt.show()
    ```
+   ![4A-COLLANTES-MP5-Process_Image4](https://github.com/user-attachments/assets/0d804ab7-ed41-45a4-9e28-b7260f230807)
    
    - Draw bounding boxes and confidence scores on the image for each detected object.
    - Display the processed image using Matplotlib.
