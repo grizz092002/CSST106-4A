@@ -12,7 +12,7 @@ This repository demonstrates how to use the YOLOv3 (You Only Look Once) model fo
    - [Non-Maximum Suppression](#4-non-maximum-suppression)
    - [Visualization](#5-visualization)
    - [Testing Multiple Images](#6-testing-multiple-images)
-4. [Performance Analysis](#performance-analysis)
+   - [Performance Analysis](#7-performance-analysis)
 
 ## Prerequisites
 
@@ -132,3 +132,110 @@ Download the YOLOv3 configuration and weights files:
    
    - Draw bounding boxes and confidence scores on the image for each detected object.
    - Display the processed image using Matplotlib.
+
+   ## 6. Testing Multiple Images
+   ```bash
+   image_paths = ['/content/test1.jpg', '/content/test2.jpg', '/content/test3.jpg']
+
+   for image_path in image_paths:
+     print(f"Processing image: {image_path}")
+   
+     image = cv2.imread(image_path)
+     height, width, channels = image.shape
+   
+     blob = cv2.dnn.blobFromImage(image, 1/255.0, (416, 416), swapRB=True, crop=False)
+     net.setInput(blob)
+     detections = net.forward(output_layers)
+   
+     class_ids = []
+     confidences = []
+     boxes = []
+   
+     for output in detections:
+         for detection in output:
+             scores = detection[5:]
+             class_id = np.argmax(scores)
+             confidence = scores[class_id]
+   
+             if confidence > 0.5:
+                 center_x = int(detection[0] * width)
+                 center_y = int(detection[1] * height)
+                 w = int(detection[2] * width)
+                 h = int(detection[3] * height)
+   
+                 x = int(center_x - w / 2)
+                 y = int(center_y - h / 2)
+   
+                 boxes.append([x, y, w, h])
+                 confidences.append(float(confidence))
+                 class_ids.append(class_id)
+   
+     indices = cv2.dnn.NMSBoxes(boxes, confidences, 0.5, 0.4)
+   
+     colors = np.random.uniform(0, 255, size=(len(boxes), 3))
+   
+     if len(indices) > 0:
+         for i in indices.flatten():
+             x, y, w, h = boxes[i]
+             label = str(class_ids[i])
+             confidence = confidences[i]
+             color = colors[i]
+   
+             cv2.rectangle(image, (x, y), (x + w, y + h), color, 2)
+             cv2.putText(image, f"{label} {confidence:.2f}", (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, color, 2)
+   
+     plt.imshow(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
+     plt.show()
+   ```
+   ### Process Images
+   
+   Image 1
+   ![4A-COLLANTES-MP5-Process_Image1](https://github.com/user-attachments/assets/9d235337-bbf9-4acd-98b7-29e1c5f81dca)
+
+   Image 2
+   ![4A-COLLANTES-MP5-Process_Image2](https://github.com/user-attachments/assets/eb665194-1626-412b-9ecc-6d00b6af668d)
+
+   Image3
+   ![4A-COLLANTES-MP5-Process_Image3](https://github.com/user-attachments/assets/5beb46dc-f9d2-4824-b76d-15f33145b01c)
+   
+   - Test the model on multiple images to evaluate performance across various inputs.
+   - Display bounding boxes and confidence scores for each tested image.
+
+   ## 7. Performance Analysis
+   
+   ## Image 1
+   - **Detected Object**: A phone held in hand, with a bounding box.
+   - **Confidence Score**: 0.98, which is high, indicating strong confidence in the detection.
+   - **Observations**: The bounding box accurately encompasses the phone and hand. The confidence level is robust, suggesting that the model successfully recognized the object in this simple scene with minimal background clutter.
+   
+   ## Image 2
+   - **Detected Object**: Another phone held in hand, detected with high accuracy.
+   - **Confidence Score**: 1.00, the highest possible, indicating complete confidence in this detection.
+   - **Observations**: The model performed well, accurately framing the object. There is a bit of overlapping bounding boxes for what appears to be the phone and surrounding objects, which could reflect sensitivity to different features within the image. Despite this, the object is detected effectively.
+   
+   ## Image 3
+   - **Detected Objects**: Multiple phones held by different individuals in a crowded setting.
+   - **Confidence Scores**: Varied, ranging from 0.58 to 1.00, which shows a range of confidence based on object position and partial occlusion.
+   - **Observations**: YOLO successfully detects multiple objects but shows a range of confidence levels, particularly for phones that are partly obscured or further from the camera. The dense and complex scene with overlapping objects demonstrates YOLO’s ability to handle multiple detections, though some lower-confidence detections are evident. Non-maximum suppression (NMS) was effective in reducing excessive overlapping, but some redundant bounding boxes remain.
+   
+   ## Overall Performance Analysis
+   
+   ### Speed and Real-Time Suitability
+   Based on the bounding box placements and relatively high confidence levels, the YOLO model’s real-time detection is consistent, even in complex scenarios.
+   
+   ### Accuracy
+   - For clear, uncluttered scenes (like Images 1 and 2), YOLO provides high-confidence detections with minimal overlap issues.
+   - In crowded scenes (Image 3), the model demonstrates solid performance with slight reductions in confidence for smaller, partially obscured objects. This is typical of YOLO, which may struggle slightly in identifying smaller objects in dense contexts but still maintains a reasonable detection rate.
+   
+   ### Strengths
+   - The high confidence in most detections reflects YOLO’s robust handling of straightforward object placement.
+   - YOLO’s single-pass detection makes it fast and effective for real-time scenarios, with minimal latency even in moderately dense scenes.
+   
+   ### Weaknesses
+   - YOLO shows slight inconsistencies in confidence for overlapping objects, such as in crowded scenes where occlusions and object proximity reduce detection accuracy.
+   - Some redundant bounding boxes appear in dense environments, indicating that while NMS reduces overlap, it does not fully eliminate it.
+   
+   ## Conclusion
+   YOLO is highly effective in detecting larger, clearer objects with high confidence, making it suitable for real-time applications with moderately complex scenes. The model's performance might slightly degrade in crowded scenes, but overall, it balances speed and accuracy effectively, particularly for real-time use cases like surveillance or automated monitoring where immediate detection is crucial.
+
+   
